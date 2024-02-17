@@ -7,14 +7,20 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
     active: true,
     currentWindow: true
   });
+  console.log(request)
   switch(request.action){
-    case "getDefaultFieldsValues":
-      chrome.tabs.executeScript(actualTab.id, { file: './scripts/background/getDefaultFieldValues.js' });
-      break;
-    case "formPrivateServerSubmission":
-      const {profileID, planetID, lang} = request.data;
-      chrome.tabs.executeScript(actualTab.id, {
-        code: `(${openStandalone.toString()})(${profileID}, ${planetID}, '${lang}')`
+    case "formPrivateServerStandaloneSubmission":
+      const {profileID, planetID, lang: langStandalone} = request.data;
+      chrome.scripting.executeScript({
+        target: {
+          tabId: actualTab.id
+        },
+        func: openStandalone,
+        args: [
+          profileID,
+          planetID,
+          langStandalone
+        ]
       });
       break;
   }
