@@ -15,7 +15,9 @@
 
 body {
     max-width: 300px;
-    height: 320px;
+    max-height: 320px;
+    min-height: 160px;
+    height: min-content;
 
     background-color: var(--background-color);
     color: var(--text-color);
@@ -84,7 +86,7 @@ input {
     display: none;
 }   
 
-#fieldset_private-server_standalone {
+#fieldset_private-server_standalone, #fieldset_private-server_webgl {
     width: 100%;
 
     display: flex;
