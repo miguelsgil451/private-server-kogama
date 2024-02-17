@@ -1,0 +1,17 @@
+{
+  "name": "private-server-kogama-plugin",
+  "description": "Private Server Kogama Extension allow that you connect in private servers.",
+  "version": "1.0.0",
+  "main": "background.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "author": "jorelwall451",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "^0.0.260",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.90.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
