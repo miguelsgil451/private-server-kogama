@@ -24,8 +24,7 @@ formPrivateServer.addEventListener("submit", async (event) => {
   chrome.runtime.sendMessage({
     action: "formPrivateServerWebgl",
     data: {
-      lang1: lang1.value,
-      lang2: lang2.value,
+      lang: `${lang1.value}_${lang2.value}`
     },
   });
 });

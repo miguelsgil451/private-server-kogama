@@ -7,12 +7,6 @@ const planetID = document.querySelector("#form_private-server_field_planetID_sta
 const lang1 = document.querySelector("#form_private-server_field_lang1_standalone");
 const lang2 = document.querySelector("#form_private-server_field_lang2_standalone");
 
-chrome.runtime.sendMessage({
-  action: "getDefaultFieldsValues"
-}, (defaultFieldValues) => {
-  
-});
-
 profileID.value = localStorage.getItem("profileID") || "";
 planetID.value = localStorage.getItem("planetID") || "";
 lang1.value = localStorage.getItem("lang1") || "";
@@ -40,12 +34,11 @@ formPrivateServer.addEventListener("submit", async (event) => {
   }
 
   chrome.runtime.sendMessage({
-    action: "formPrivateServerSubmission",
+    action: "formPrivateServerStandaloneSubmission",
     data: {
       profileID: profileID.value,
       planetID: planetID.value,
-      lang1: lang1.value,
-      lang2: lang2.value,
+      lang: `${lang1.value.toLowerCase()}_${lang2.value.toUpperCase()}`
     },
   });
 });
