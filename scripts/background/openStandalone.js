@@ -32,7 +32,7 @@ export default function openStandalone(profileID, planetID, lang) {
 
       console.log(finalUrl);
 
-      return finalUrl;
+      location.href = finalUrl;
     })
     .catch((error) => {
       console.error("Houve um problema com a operação de busca:", error);
