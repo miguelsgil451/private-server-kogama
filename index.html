@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PRIVATE SERVER KOGAMA</title>
+</head>
+<body>
+    <form id="form_private-server_standalone">
+        <h1>PRIVATE SERVER KOGAMA</h1>
+        <fieldset class="fieldset_private-server" id="fieldset_private-server_standalone">
+            <div class="form_private-server-field">
+                <label for="profileID">PROFILE ID:</label>
+                <input type="text" id="form_private-server_field_profileID_standalone" autocomplete="off">
+            </div>
+            <div class="form_private-server-field">
+                <label for="planetID">PLANET ID:</label>
+                <input type="text" id="form_private-server_field_planetID_standalone" autocomplete="off">
+            </div>
+            <div class="form_private-server-field">
+                <label>LANG</label>
+                <div class="form_private-server-field_lang-fields">
+                    <div class="form_private-server-field_lang">
+                        <label for="lang1"></label>
+                        <input type="text" id="form_private-server_field_lang1_standalone" autocomplete="off">
+                    </div>
+                    <div class="form_private-server-field_lang">                
+                        <label for="lang2"></label>
+                        <input type="text" id="form_private-server_field_lang2_standalone" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+            <button type="submit">CONNECT</button>
+        </fieldset>
+    </form>
+    <form id="form_private-server_webgl">
+        <h1>PRIVATE SERVER KOGAMA</h1>
+        <fieldset class="fieldset_private-server" id="fieldset_private-server_webgl">
+            <div class="form_private-server-field">
+                <label>LANG</label>
+                <div class="form_private-server-field_lang-fields">
+                    <div class="form_private-server-field_lang">
+                        <label for="lang1"></label>
+                        <input type="text" id="form_private-server_field_lang1_webgl" autocomplete="off">
+                    </div>
+                    <div class="form_private-server-field_lang">                
+                        <label for="lang2"></label>
+                        <input type="text" id="form_private-server_field_lang2_webgl" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+            <button type="submit">CONNECT</button>
+        </fieldset>
+    </form>
+    <button type="button" id="button_select-form">I AM WEBGL</button>
+    <script defer type="module" src="scripts/content/privateServerFormStandalone.js"></script>
+    <script defer type="module" src="scripts/content/privateServerFormWebgl.js"></script>
+    <script defer type="module" src="scripts/content/buttonSelectForm.js"></script>
+</body>
+</html>
