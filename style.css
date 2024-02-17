@@ -1,0 +1,130 @@
+:root {
+    --background-color: #090909;
+    --text-color: #f6f6f6;
+    --button-background: #f6f6f6;
+    --button-text: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--text-color);
+}
+
+body {
+    max-width: 300px;
+    height: 320px;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+fieldset {
+    border: 0;
+}
+
+h1 {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+label {
+    font-weight: 500;
+}
+
+button {
+    height: 3em;
+    cursor: pointer;
+    background-color: var(--button-background);
+    color: var(--button-text);
+    border: 0;
+    outline: 0;
+}
+
+button:hover {
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    
+    flex-grow: 1;
+
+    font-weight: 600;
+    color: black;
+}
+
+button,
+input {
+    width: 100%;
+    padding: 5px;
+
+    outline: 0;
+    border: 0;
+}
+
+#form_private-server_standalone, #form_private-server_webgl {
+    max-width: 300px;
+    width: 300px;
+
+    padding: 2em;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#form_private-server_webgl {
+    display: none;
+}   
+
+#fieldset_private-server_standalone {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+#button_select-form {
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+.form_private-server-field input,
+.form_private-server-field_lang input {
+    height: 2em;
+
+    flex-grow: 1;
+}
+
+.form_private-server-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.form_private-server-field_lang-fields {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.form_private-server-field_lang {
+    width: 100%;
+}
+
+.form_private-server-field_lang>input {
+    flex: 1;
+}
+
+.form_private-server-field_lang>label {
+    display: none;
+}
