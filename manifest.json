@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Private Server Kogama Extension",
+    "version": "1.0",
+    "description": "Private Server Kogama Extension allow that you connect in private servers.",
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
+    "action": {
+      "default_popup": "index.html"
+    },
+    "background": {
+      "service_worker": "./dist/background_bundle.js"
+    }
+  }
+  
