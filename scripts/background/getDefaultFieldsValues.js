@@ -12,9 +12,9 @@ export default function getDefaultFieldsValues() {
   const match = url.match(regex);
 
   const planetID = match ? match[1] : null;
-
+  console.log(planetID);
   return {
     profileID,
-    planetID: planetID,
+    planetID,
   };
 }

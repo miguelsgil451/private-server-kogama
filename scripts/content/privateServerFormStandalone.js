@@ -15,8 +15,7 @@ const lang2 = document.querySelector(
   "#form_private-server_field_lang2_standalone"
 );
 
-chrome.runtime
-  .sendMessage({ action: "getDefaultFieldsValues" })
+chrome.runtime.sendMessage({ action: "getDefaultFieldsValues" })
   .then((fieldsValues) => {
     localStorage.setItem(
       "profileID",
@@ -26,16 +25,15 @@ chrome.runtime
       "planetID",
       fieldsValues.planetID || localStorage.getItem("planetID")
     );
-    console.log(localStorage.getItem("profileID"));
+
+    profileID.value = localStorage.getItem("profileID") || "";
+    planetID.value = localStorage.getItem("planetID") || "";
+    lang1.value = localStorage.getItem("lang1") || "";
+    lang2.value = localStorage.getItem("lang2") || "";
   })
   .catch((error) => {
     console.error("Erro ao enviar mensagem:", error);
   });
-
-profileID.value = localStorage.getItem("profileID") || "";
-planetID.value = localStorage.getItem("planetID") || "";
-lang1.value = localStorage.getItem("lang1") || "";
-lang2.value = localStorage.getItem("lang2") || "";
 
 profileID.addEventListener("change", (event) =>
   localStorage.setItem("profileID", event.target.value)
