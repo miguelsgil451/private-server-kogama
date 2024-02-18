@@ -1,18 +1,29 @@
-export default function getDefaultFieldsValues() {
+function getProfileID(){
   /**
    * @type {HTMLMetaElement}
    */
   const metaProfileID = document.querySelector("meta[name='Notify-Token']");
   const profileID = metaProfileID.content.split(".")[0];
 
+  return profileID;
+}
+
+function getPlanetID(){
   const url = window.location.href;
-
+  
   const regex = /\/play\/(\d+)/;
-
+  
   const match = url.match(regex);
-
+  
   const planetID = match ? match[1] : null;
-  console.log(planetID);
+
+  return planetID;
+}
+
+export default function getDefaultFieldsValues() {
+  const profileID = getProfileID();
+  const planetID = getPlanetID();
+  
   return {
     profileID,
     planetID,

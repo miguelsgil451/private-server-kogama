@@ -17,14 +17,16 @@ const lang2 = document.querySelector(
 
 chrome.runtime.sendMessage({ action: "getDefaultFieldsValues" })
   .then((fieldsValues) => {
-    localStorage.setItem(
-      "profileID",
-      fieldsValues.profileID || localStorage.getItem("profileID")
-    );
-    localStorage.setItem(
-      "planetID",
-      fieldsValues.planetID || localStorage.getItem("planetID")
-    );
+    if(fieldsValues){
+      localStorage.setItem(
+        "profileID",
+        fieldsValues.profileID || localStorage.getItem("profileID")
+      );
+      localStorage.setItem(
+        "planetID",
+        fieldsValues.planetID || localStorage.getItem("planetID")
+      );
+    }
 
     profileID.value = localStorage.getItem("profileID") || "";
     planetID.value = localStorage.getItem("planetID") || "";
