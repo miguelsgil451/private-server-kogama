@@ -50,7 +50,7 @@ lang2.addEventListener("change", (event) =>
 
 formPrivateServer.addEventListener("submit", async (event) => {
   event.preventDefault();
-
+  
   if (!profileID.value || !planetID.value || !lang1.value || !lang2.value) {
     alert("Preencha todos os campos!");
     return;
