@@ -15,6 +15,8 @@ export default async function openStandalone(profileID, planetID, lang) {
 
     const newUrl = `https://kogama.com.br/locator/session/${id}/?token=${encodeURIComponent(sessionToken)}&plugin=STANDALONE&ssl=1&unityPacket=1`;
 
+    console.log(`NOVA API URL: ${newUrl}`)
+
     const base64Url = btoa(newUrl);
     const finalUrl = `kogama2-br:kogamaPackage:${base64Url}`;
 
