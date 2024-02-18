@@ -1,11 +1,15 @@
 # Private Server Kogama
 
-O Private Server Kogama é uma ferramenta essencial para os jogadores do jogo Kogama que desejam ter uma experiência privada.
+O Private Server Kogama é uma ferramenta essencial para os jogadores do jogo Kogama que desejam ter um servidor privado.
 
 ## Disponibilidade
  - **Standalone**: ✅(*Disponível*)
  - **Webgl**: 🚧(*Desenvolvimento*)
  - **Android**: ❌(*Indisponível*)
+
+## Updates
+ - Autocomplete do profileID
+ - Autocomplete do planetID
 
 ## Créditos
 
