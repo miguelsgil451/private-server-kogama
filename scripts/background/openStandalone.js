@@ -1,41 +1,29 @@
+export default async function openStandalone(profileID, planetID, lang) {
+  try {
+    console.log("Gerando URL...");
 
-/**
- * @author {eminent}
- */ 
+    console.log(`API URL: https://kogama.com.br/locator/session/?objectID=${planetID}&profileID=${profileID}&lang=${lang}&type=local-play`);
 
-export default function openStandalone(profileID, planetID, lang) {
-  console.log("Gerando URL...");
+    const response = await fetch(`https://kogama.com.br/locator/session/?objectID=${planetID}&profileID=${profileID}&lang=${lang}&type=local-play`);
 
-  return fetch(
-    `https://kogama.com.br/locator/session/?objectID=${planetID}&profileID=${profileID}&lang=${lang}&type=local-play`
-  )
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(
-          "Ocorreu um erro ao acessar as informações: " + response.statusText
-        );
-      }
-      return response.json();
-    })
-    .then((data) => {
-      const { id, sessionToken } = data;
+    if (!response.ok) {
+      throw new Error("Ocorreu um erro ao acessar as informações: " + response.statusText);
+    }
 
-      const newUrl = `https://kogama.com.br/locator/session/${id}/?token=${encodeURIComponent(
-        sessionToken
-      )}&plugin=STANDALONE&ssl=1&unityPacket=1`;
+    const data = await response.json();
+    const { id, sessionToken } = data;
 
-      const base64Url = btoa(newUrl);
+    const newUrl = `https://kogama.com.br/locator/session/${id}/?token=${encodeURIComponent(sessionToken)}&plugin=STANDALONE&ssl=1&unityPacket=1`;
 
-      const finalUrl = `kogama2-br:kogamaPackage:${base64Url}`;
+    const base64Url = btoa(newUrl);
+    const finalUrl = `kogama2-br:kogamaPackage:${base64Url}`;
 
-      console.log("URL GERADA!");
+    console.log("URL GERADA!");
+    console.log(finalUrl);
 
-      console.log(finalUrl);
-
-      location.href = finalUrl;
-    })
-    .catch((error) => {
-      console.error("Houve um problema com a operação de busca:", error);
-      throw error;
-    });
+    location.href = finalUrl;
+  } catch (error) {
+    console.error("Houve um problema com a operação de busca:", error);
+    throw error;
+  }
 }

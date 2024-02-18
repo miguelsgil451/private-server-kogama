@@ -11,7 +11,7 @@ export default function openWebgl(lang){
 
     const originalOpenFunction = xhrPrototype.open;
 
-    xhrPrototype.open = function () {
+    xhrPrototype.open = () => {
         const url = arguments[1];
         if (url.includes("lang=")) {
             const newUrl = url.replace(/(lang=)[^&]*/, `$1${langValue}`);
@@ -21,4 +21,6 @@ export default function openWebgl(lang){
 
         originalOpenFunction.apply(this, arguments);
     };
+
+    
 }
