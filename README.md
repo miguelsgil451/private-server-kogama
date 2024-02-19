@@ -17,7 +17,7 @@ O Private Server Kogama é uma ferramenta essencial para os jogadores do jogo Ko
 
 - **Eminent**: Eminent foi quem realmente conseguiu implementar os servidores privados.
 
-- **Leptola(eu)**: Leptola Fez a implementação visual, a extensão.
+- **Leptola(eu)**: Leptola fez a implementação visual, a extensão.
 
 ## Tutorial
 
