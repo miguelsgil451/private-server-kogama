@@ -18,23 +18,37 @@ const lang2 = document.querySelector(
 chrome.runtime.sendMessage({ action: "getDefaultFieldsValues" })
   .then((fieldsValues) => {
     if(fieldsValues){
-      localStorage.setItem(
-        "profileID",
-        fieldsValues.profileID || localStorage.getItem("profileID")
-      );
-      localStorage.setItem(
-        "planetID",
-        fieldsValues.planetID || localStorage.getItem("planetID")
-      );
+      if(fieldsValues.profileID){
+        localStorage.setItem(
+          "profileID",
+          fieldsValues.profileID
+        );
+      }
+      if(fieldsValues.planetID){
+        localStorage.setItem(
+          "planetID",
+          fieldsValues.planetID
+        );
+        if(fieldsValues.lang){
+          localStorage.setItem(
+            "lang1",
+            fieldsValues.lang[0]
+          );
+          localStorage.setItem(
+            "lang2",
+            fieldsValues.lang[1]
+          );
+        }
+      }
     }
 
-    profileID.value = localStorage.getItem("profileID") || "";
-    planetID.value = localStorage.getItem("planetID") || "";
-    lang1.value = localStorage.getItem("lang1") || "";
-    lang2.value = localStorage.getItem("lang2") || "";
+    profileID.value = localStorage.getItem("profileID");
+    planetID.value = localStorage.getItem("planetID");
+    lang1.value = localStorage.getItem("lang1");
+    lang2.value = localStorage.getItem("lang2");
   })
   .catch((error) => {
-    console.error("Erro ao enviar mensagem:", error);
+    console.error("Erro no script", error);
   });
 
 profileID.addEventListener("change", (event) =>
