@@ -2,20 +2,28 @@ export default async function openStandalone(profileID, planetID, lang) {
   try {
     console.log("Gerando URL...");
 
-    console.log(`API URL: https://kogama.com.br/locator/session/?objectID=${planetID}&profileID=${profileID}&lang=${lang}&type=local-play`);
+    console.log(
+      `API URL: https://kogama.com.br/locator/session/?objectID=${planetID}&profileID=${profileID}&lang=${lang}&type=local-play`
+    );
 
-    const response = await fetch(`https://kogama.com.br/locator/session/?objectID=${planetID}&profileID=${profileID}&lang=${lang}&type=local-play`);
+    const response = await fetch(
+      `https://kogama.com.br/locator/session/?objectID=${planetID}&profileID=${profileID}&lang=${lang}&type=local-play`
+    );
 
     if (!response.ok) {
-      throw new Error("Ocorreu um erro ao acessar as informações: " + response.statusText);
+      throw new Error(
+        "Ocorreu um erro ao acessar as informações: " + response.statusText
+      );
     }
 
     const data = await response.json();
     const { id, sessionToken } = data;
 
-    const newUrl = `https://kogama.com.br/locator/session/${id}/?token=${encodeURIComponent(sessionToken)}&plugin=STANDALONE&ssl=1&unityPacket=1`;
+    const newUrl = `https://kogama.com.br/locator/session/${id}/?token=${encodeURIComponent(
+      sessionToken
+    )}&plugin=STANDALONE&ssl=1&unityPacket=1`;
 
-    console.log(`NOVA API URL: ${newUrl}`)
+    console.log(`NOVA API URL: ${newUrl}`);
 
     const base64Url = btoa(newUrl);
     const finalUrl = `kogama2-br:kogamaPackage:${base64Url}`;
