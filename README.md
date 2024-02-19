@@ -10,6 +10,8 @@ O Private Server Kogama é uma ferramenta essencial para os jogadores do jogo Ko
 ## Updates
  - Autocomplete do profileID
  - Autocomplete do planetID
+ - Autocomplete do lang(
+    se haver especificação na url. ex.: https://kogama.com.br/games/play/4692065/?lang=jk_PB)
 
 ## Créditos
 
